@@ -6,7 +6,7 @@
 #    By: tlavelle <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/19 13:08:48 by tlavelle          #+#    #+#              #
-#    Updated: 2020/05/19 16:29:16 by tlavelle         ###   ########.fr        #
+#    Updated: 2020/05/19 20:47:11 by tlavelle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,5 +63,9 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+so:
+	gcc -fPIC -c $(SOURCES)
+	gcc -shared -o libft.so $(OBJ)
 
 .PHONY: all clean fclean re 

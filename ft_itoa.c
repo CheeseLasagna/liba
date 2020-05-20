@@ -6,13 +6,13 @@
 /*   By: tlavelle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/14 16:39:38 by tlavelle          #+#    #+#             */
-/*   Updated: 2020/05/18 18:46:35 by tlavelle         ###   ########.fr       */
+/*   Updated: 2020/05/19 20:54:53 by tlavelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int		ft_length(int n)
+int		ft_len(int n)
 {
 	int length;
 
@@ -35,7 +35,7 @@ char	*ft_itoa(int n)
 	int		sign;
 
 	sign = 1;
-	len = ft_length(n);
+	len = ft_len(n);
 	if (n < 0)
 	{
 		n = n * -1;
