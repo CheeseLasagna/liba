@@ -6,7 +6,7 @@
 /*   By: tlavelle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/11 11:04:47 by tlavelle          #+#    #+#             */
-/*   Updated: 2020/05/18 12:03:09 by tlavelle         ###   ########.fr       */
+/*   Updated: 2020/05/20 14:35:40 by tlavelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,19 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	length = len;
 	if (*second == 0)
 		return ((char*)big);
-	while (*big != 0)
+	if (ft_strlen(little) > ft_strlen(big) || ft_strlen(little) > len)
+		return (NULL);
+	while (*big != 0 && length != 0)
 	{
-		while (*first++ == *second++)
+		while (length-- != 0 && *first++ == *second++)
 		{
-			if (--length == 0 || *second == 0)
+			if (*second == 0)
 				return ((char*)big);
 		}
+		length = --len;
 		big++;
 		first = (char*)big;
 		second = (char*)little;
-		length = len;
 	}
 	return (NULL);
 }

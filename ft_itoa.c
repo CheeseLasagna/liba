@@ -6,7 +6,7 @@
 /*   By: tlavelle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/14 16:39:38 by tlavelle          #+#    #+#             */
-/*   Updated: 2020/05/19 20:54:53 by tlavelle         ###   ########.fr       */
+/*   Updated: 2020/05/20 15:09:18 by tlavelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int		ft_len(int n)
 	int length;
 
 	length = 0;
+	if (n == 0)
+		return (1);
 	if (n < 0)
 		length++;
 	n = n * -1;

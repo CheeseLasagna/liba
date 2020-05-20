@@ -6,7 +6,7 @@
 /*   By: tlavelle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 18:20:11 by tlavelle          #+#    #+#             */
-/*   Updated: 2020/05/19 10:09:34 by tlavelle         ###   ########.fr       */
+/*   Updated: 2020/05/20 18:35:41 by tlavelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ int		ft_length(const char *s, char c)
 	int length;
 
 	length = 0;
-	if (*s == 0)
+	if (*s == '\0')
 		return (0);
-	while (*s != 0 && *s != c)
+	while (*s != '\0' && *s != c)
 	{
 		length++;
 		s++;
@@ -64,24 +64,25 @@ char	**ft_split(char const *s, char c)
 	char	*str;
 	int		index;
 	int		length;
+	int		numberofw;
 
-	index = 0;
+	numberofw = wordsnb(s, c);
+	index = -1;
 	pointer = (char**)malloc(sizeof(char*) * (wordsnb(s, c) + 1));
-	if (pointer == 0)
+	if (pointer == NULL)
 		return (NULL);
-	while (*s != 0)
+	while (++index < numberofw)
 	{
 		while (*s == c)
 			s++;
 		length = ft_length(s, c);
-		pointer[index] = (char*)malloc(sizeof(char) * (length + 1));
-		str = pointer[index];
-		if (str == 0)
+		if (!(pointer[index] = (char*)malloc(sizeof(char) * (length + 1))))
 			return (ft_free(pointer, index));
+		str = pointer[index];
 		while (length--)
 			*str++ = *s++;
 		*str = '\0';
-		index++;
 	}
+	pointer[index] = NULL;
 	return (pointer);
 }
