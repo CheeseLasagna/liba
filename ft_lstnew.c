@@ -6,7 +6,7 @@
 /*   By: tlavelle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/21 17:58:47 by tlavelle          #+#    #+#             */
-/*   Updated: 2020/05/22 18:18:40 by tlavelle         ###   ########.fr       */
+/*   Updated: 2020/05/25 15:40:56 by tlavelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_list	*ft_lstnew(void *content)
 
 	temp = (t_list*)malloc(sizeof(t_list));
 	if (temp == NULL)
-		return (temp);
+		return (NULL);
 	temp->next = NULL;
 	temp->content = content;
 	return (temp);

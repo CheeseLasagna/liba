@@ -6,11 +6,12 @@
 /*   By: tlavelle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/14 16:39:38 by tlavelle          #+#    #+#             */
-/*   Updated: 2020/05/20 15:09:18 by tlavelle         ###   ########.fr       */
+/*   Updated: 2020/05/25 14:26:58 by tlavelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
 int		ft_len(int n)
 {
@@ -38,6 +39,8 @@ char	*ft_itoa(int n)
 
 	sign = 1;
 	len = ft_len(n);
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
 	if (n < 0)
 	{
 		n = n * -1;
@@ -49,8 +52,7 @@ char	*ft_itoa(int n)
 	pointer[len--] = '\0';
 	while (len >= 0)
 	{
-		pointer[len] = n % 10 + 48;
-		len--;
+		pointer[len--] = n % 10 + 48;
 		n = n / 10;
 	}
 	if (sign == 0)

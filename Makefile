@@ -6,7 +6,7 @@
 #    By: tlavelle <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/19 13:08:48 by tlavelle          #+#    #+#              #
-#    Updated: 2020/05/25 11:16:22 by tlavelle         ###   ########.fr        #
+#    Updated: 2020/05/25 18:43:16 by tlavelle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,29 +46,35 @@ SOURCES = ft_memset.c\
 		ft_putstr_fd.c\
 		ft_putendl_fd.c\
 		ft_putnbr_fd.c
-BONUSSRC = ft_lstnew.c\
+BONUS = ft_lstnew.c\
 		ft_lstadd_front.c\
 		ft_lstsize.c\
 		ft_lstlast.c\
 		ft_lstadd_back.c\
 		ft_lstdelone.c\
 		ft_lstclear.c\
-		ft_lstiter.c 
+		ft_lstiter.c\
+		ft_lstmap.c
 OBJ = $(SOURCES:.c=.o)
-BONUSOBJ = $(BONUSSRC:.c=.o)
+BONUSOBJ = $(BONUS:.c=.o)
 all: $(NAME)
 
 $(NAME): objects 
-	ar rc $(NAME) $(OBJ) $(BONUSOBJ) 
+	ar rc $(NAME) $(OBJ)
+	ranlib $(NAME)
+
+bonus: objects
+	ar rc $(NAME) $(OBJ) $(BONUSOBJ)
+	ranlib $(NAME)
 
 objects:
-	gcc $(FLAGS) $(SOURCES) $(BONUSSRC) 
+	gcc $(FLAGS) $(SOURCES) $(BONUS) 
 
 clean:
 	rm -f $(OBJ) $(BONUSOBJ) 
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) libft.so
 
 re: fclean all
 
