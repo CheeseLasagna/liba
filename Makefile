@@ -6,7 +6,7 @@
 #    By: tlavelle <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/19 13:08:48 by tlavelle          #+#    #+#              #
-#    Updated: 2020/05/22 16:58:03 by tlavelle         ###   ########.fr        #
+#    Updated: 2020/05/25 11:16:22 by tlavelle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,10 +59,10 @@ BONUSOBJ = $(BONUSSRC:.c=.o)
 all: $(NAME)
 
 $(NAME): objects 
-	ar rc $(NAME) $(OBJ) 
+	ar rc $(NAME) $(OBJ) $(BONUSOBJ) 
 
 objects:
-	gcc $(FLAGS) $(SOURCES) 
+	gcc $(FLAGS) $(SOURCES) $(BONUSSRC) 
 
 clean:
 	rm -f $(OBJ) $(BONUSOBJ) 
