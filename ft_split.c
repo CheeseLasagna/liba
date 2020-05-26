@@ -6,7 +6,7 @@
 /*   By: tlavelle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 18:20:11 by tlavelle          #+#    #+#             */
-/*   Updated: 2020/05/20 18:35:41 by tlavelle         ###   ########.fr       */
+/*   Updated: 2020/05/26 11:40:53 by tlavelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int		wordsnb(char const *s, char c)
 {
 	int number;
 
+	if (!s)
+		return (0);
 	number = 0;
 	while (*s != 0)
 	{
@@ -66,10 +68,10 @@ char	**ft_split(char const *s, char c)
 	int		length;
 	int		numberofw;
 
-	numberofw = wordsnb(s, c);
+	if (!(numberofw = wordsnb(s, c)) && !s)
+		return (NULL);
 	index = -1;
-	pointer = (char**)malloc(sizeof(char*) * (wordsnb(s, c) + 1));
-	if (pointer == NULL)
+	if (!(pointer = (char**)malloc(sizeof(char*) * (numberofw + 1))))
 		return (NULL);
 	while (++index < numberofw)
 	{

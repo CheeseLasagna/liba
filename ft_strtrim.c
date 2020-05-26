@@ -6,7 +6,7 @@
 /*   By: tlavelle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 12:30:00 by tlavelle          #+#    #+#             */
-/*   Updated: 2020/05/19 10:07:40 by tlavelle         ###   ########.fr       */
+/*   Updated: 2020/05/26 10:17:02 by tlavelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		len;
 
 	index = 0;
+	if (!s1)
+		return (NULL);
 	index2 = ft_strlen(s1) - 1;
 	while (s1[index] && inset(s1[index], set))
 		index++;

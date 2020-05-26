@@ -6,7 +6,7 @@
 /*   By: tlavelle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/21 17:58:47 by tlavelle          #+#    #+#             */
-/*   Updated: 2020/05/25 15:40:56 by tlavelle         ###   ########.fr       */
+/*   Updated: 2020/05/26 10:43:45 by tlavelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,4 @@ t_list	*ft_lstnew(void *content)
 	temp->next = NULL;
 	temp->content = content;
 	return (temp);
-}		
+}

@@ -6,7 +6,7 @@
 /*   By: tlavelle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 18:49:21 by tlavelle          #+#    #+#             */
-/*   Updated: 2020/05/19 10:08:18 by tlavelle         ###   ########.fr       */
+/*   Updated: 2020/05/26 10:19:14 by tlavelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	counter;
 
 	counter = 0;
+	if (!s)
+		return (NULL);
 	if (ft_strlen(s) < start)
 		return (NULL);
 	pointer = (char*)malloc(sizeof(char) * (len + 1));

@@ -6,7 +6,7 @@
 /*   By: tlavelle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/21 18:38:48 by tlavelle          #+#    #+#             */
-/*   Updated: 2020/05/22 13:48:33 by tlavelle         ###   ########.fr       */
+/*   Updated: 2020/05/26 10:42:23 by tlavelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	{
 		new->next = NULL;
 		*lst = new;
-		return ; 
+		return ;
 	}
 	while (temp->next != NULL)
 	{

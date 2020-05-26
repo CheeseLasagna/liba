@@ -6,7 +6,7 @@
 /*   By: tlavelle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/21 18:13:24 by tlavelle          #+#    #+#             */
-/*   Updated: 2020/05/21 18:30:44 by tlavelle         ###   ########.fr       */
+/*   Updated: 2020/05/26 10:42:00 by tlavelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	new->next = *lst;
-	*lst = new;	
+	*lst = new;
 }

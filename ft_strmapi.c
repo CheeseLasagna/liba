@@ -6,7 +6,7 @@
 /*   By: tlavelle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/14 19:47:35 by tlavelle          #+#    #+#             */
-/*   Updated: 2020/05/15 16:35:38 by tlavelle         ###   ########.fr       */
+/*   Updated: 2020/05/26 10:12:24 by tlavelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	index;
 
 	index = 0;
+	if (!s)
+		return (NULL);
 	pointer = (char*)malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (pointer == 0)
 		return (NULL);
