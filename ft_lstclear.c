@@ -6,7 +6,7 @@
 /*   By: tlavelle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/22 11:20:51 by tlavelle          #+#    #+#             */
-/*   Updated: 2020/05/26 15:28:25 by tlavelle         ###   ########.fr       */
+/*   Updated: 2020/05/26 15:38:00 by tlavelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list *current;
 	t_list *temp;
-
+	
+	if (!lst)
+		return (NULL);
 	current = *lst;
 	while (current != NULL)
 	{
