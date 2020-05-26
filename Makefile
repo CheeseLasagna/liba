@@ -6,12 +6,16 @@
 #    By: tlavelle <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/19 13:08:48 by tlavelle          #+#    #+#              #
-#    Updated: 2020/05/25 18:43:16 by tlavelle         ###   ########.fr        #
+#    Updated: 2020/05/26 15:09:26 by tlavelle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-FLAGS = -Wall -Wextra -Werror -c
+
+FLAGS = -Wall -Wextra -Werror
+
+HEADER = ./
+
 SOURCES = ft_memset.c\
 		ft_bzero.c\
 		ft_memcpy.c\
@@ -46,6 +50,7 @@ SOURCES = ft_memset.c\
 		ft_putstr_fd.c\
 		ft_putendl_fd.c\
 		ft_putnbr_fd.c
+
 BONUS = ft_lstnew.c\
 		ft_lstadd_front.c\
 		ft_lstsize.c\
@@ -55,20 +60,23 @@ BONUS = ft_lstnew.c\
 		ft_lstclear.c\
 		ft_lstiter.c\
 		ft_lstmap.c
+
 OBJ = $(SOURCES:.c=.o)
+
 BONUSOBJ = $(BONUS:.c=.o)
+
 all: $(NAME)
 
-$(NAME): objects 
+$(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
-bonus: objects
+bonus: $(OBJ) $(BONUSOBJ)
 	ar rc $(NAME) $(OBJ) $(BONUSOBJ)
 	ranlib $(NAME)
 
-objects:
-	gcc $(FLAGS) $(SOURCES) $(BONUS) 
+%.o: %.c libft.h
+	gcc $(FLAGS) -c $< 
 
 clean:
 	rm -f $(OBJ) $(BONUSOBJ) 
@@ -82,4 +90,4 @@ so:
 	gcc -fPIC -c $(SOURCES) $(BONUSSRC)
 	gcc -shared -o libft.so $(OBJ) $(BONUSOBJ)
 
-.PHONY: all clean fclean re 
+.PHONY: all bonus clean fclean re 
