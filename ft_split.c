@@ -6,12 +6,11 @@
 /*   By: tlavelle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 18:20:11 by tlavelle          #+#    #+#             */
-/*   Updated: 2020/05/26 11:40:53 by tlavelle         ###   ########.fr       */
+/*   Updated: 2020/05/28 16:54:00 by tlavelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 int		wordsnb(char const *s, char c)
 {

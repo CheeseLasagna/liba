@@ -6,16 +6,18 @@
 /*   By: tlavelle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/10 19:16:29 by tlavelle          #+#    #+#             */
-/*   Updated: 2020/05/18 10:53:45 by tlavelle         ###   ########.fr       */
+/*   Updated: 2020/05/26 22:15:13 by tlavelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
 	while (*s != c)
 	{
 		if (*s == '\0')
-			return (0);
+			return (NULL);
 		s++;
 	}
 	return ((char*)s);

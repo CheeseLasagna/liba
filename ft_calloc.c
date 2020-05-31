@@ -6,11 +6,10 @@
 /*   By: tlavelle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/11 20:45:12 by tlavelle          #+#    #+#             */
-/*   Updated: 2020/05/19 14:36:30 by tlavelle         ###   ########.fr       */
+/*   Updated: 2020/05/28 16:37:08 by tlavelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 void	*ft_calloc(size_t nmemb, size_t size)
@@ -18,7 +17,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	void *pointer;
 
 	pointer = malloc(size * nmemb);
-	if (pointer == 0)
+	if (pointer == NULL)
 		return (NULL);
 	else
 	{

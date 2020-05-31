@@ -6,7 +6,7 @@
 /*   By: tlavelle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/21 18:38:48 by tlavelle          #+#    #+#             */
-/*   Updated: 2020/05/26 15:43:35 by tlavelle         ###   ########.fr       */
+/*   Updated: 2020/05/26 18:39:05 by tlavelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	t_list *temp;
 
 	temp = *lst;
-	if (new == NULL)
+	if (!lst || !new)
 		return ;
 	if (*lst == NULL)
 	{

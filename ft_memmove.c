@@ -6,7 +6,7 @@
 /*   By: tlavelle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/09 18:17:11 by tlavelle          #+#    #+#             */
-/*   Updated: 2020/05/25 12:57:52 by tlavelle         ###   ########.fr       */
+/*   Updated: 2020/05/28 16:23:29 by tlavelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	unsigned char *source;
 
 	if (!src && !dest)
-		return (0);
+		return (NULL);
 	destination = (unsigned char*)dest;
 	source = (unsigned char*)src;
 	if (destination < source)

@@ -6,12 +6,11 @@
 /*   By: tlavelle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 12:30:00 by tlavelle          #+#    #+#             */
-/*   Updated: 2020/05/26 10:17:02 by tlavelle         ###   ########.fr       */
+/*   Updated: 2020/05/28 16:53:35 by tlavelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 int		inset(char const character, char const *set)
 {
@@ -55,7 +54,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	}
 	len = index2 - index + 1;
 	pointer = (char*)malloc(sizeof(char) * (len + 1));
-	if (pointer == 0)
+	if (pointer == NULL)
 		return (NULL);
 	fillup(pointer, s1, len, index);
 	return (pointer);

@@ -6,15 +6,13 @@
 #    By: tlavelle <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/19 13:08:48 by tlavelle          #+#    #+#              #
-#    Updated: 2020/05/26 15:09:26 by tlavelle         ###   ########.fr        #
+#    Updated: 2020/05/26 22:40:05 by tlavelle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
 FLAGS = -Wall -Wextra -Werror
-
-HEADER = ./
 
 SOURCES = ft_memset.c\
 		ft_bzero.c\
@@ -82,12 +80,8 @@ clean:
 	rm -f $(OBJ) $(BONUSOBJ) 
 
 fclean: clean
-	rm -f $(NAME) libft.so
+	rm -f $(NAME)
 
 re: fclean all
-
-so:
-	gcc -fPIC -c $(SOURCES) $(BONUSSRC)
-	gcc -shared -o libft.so $(OBJ) $(BONUSOBJ)
 
 .PHONY: all bonus clean fclean re 

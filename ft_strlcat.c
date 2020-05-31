@@ -6,7 +6,7 @@
 /*   By: tlavelle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 17:37:35 by tlavelle          #+#    #+#             */
-/*   Updated: 2020/05/19 10:06:33 by tlavelle         ###   ########.fr       */
+/*   Updated: 2020/05/28 17:23:31 by tlavelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	int destlen;
-	int srclen;
-	int freespace;
-	int index;
+	size_t	destlen;
+	size_t	srclen;
+	int		freespace;
+	size_t	index;
 
 	destlen = ft_strlen(dest);
 	srclen = ft_strlen(src);
@@ -30,7 +30,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 		freespace--;
 	}
 	dest[destlen + index] = '\0';
-	if (size < (unsigned)destlen)
+	if (size < destlen)
 		return (size + srclen);
 	return (destlen + srclen);
 }

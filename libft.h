@@ -6,13 +6,14 @@
 /*   By: tlavelle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/15 13:33:05 by tlavelle          #+#    #+#             */
-/*   Updated: 2020/05/26 10:56:18 by tlavelle         ###   ########.fr       */
+/*   Updated: 2020/05/28 13:28:23 by tlavelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <string.h>
+# include <stdlib.h>
 
 typedef	struct	s_list
 {

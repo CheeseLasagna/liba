@@ -6,11 +6,10 @@
 /*   By: tlavelle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/14 16:39:38 by tlavelle          #+#    #+#             */
-/*   Updated: 2020/05/25 14:26:58 by tlavelle         ###   ########.fr       */
+/*   Updated: 2020/05/28 16:55:21 by tlavelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 int		ft_len(int n)
@@ -47,7 +46,7 @@ char	*ft_itoa(int n)
 		sign = 0;
 	}
 	pointer = (char*)malloc(sizeof(char) * (len + 1));
-	if (pointer == 0)
+	if (pointer == NULL)
 		return (NULL);
 	pointer[len--] = '\0';
 	while (len >= 0)
