@@ -6,7 +6,7 @@
 #    By: tlavelle <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/19 13:08:48 by tlavelle          #+#    #+#              #
-#    Updated: 2020/05/26 22:40:05 by tlavelle         ###   ########.fr        #
+#    Updated: 2020/07/20 10:46:03 by tlavelle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,8 @@ SOURCES = ft_memset.c\
 		ft_strtrim.c\
 		ft_split.c\
 		ft_itoa.c\
+		ft_itoahex.c\
+		ft_itoaun.c\
 		ft_strmapi.c\
 		ft_putchar_fd.c\
 		ft_putstr_fd.c\
